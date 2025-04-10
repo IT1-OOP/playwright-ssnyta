@@ -12,5 +12,8 @@ def test_page_title():
         page.goto(f"file:///{file_path}")
         nadpis_1 = page.locator('h1').first
         expect(nadpis_1).to_be_visible()
+        w3_link = page.locator('#w3')
         #title = page.title()print(title)
+        expect(w3_link).to_be_visible()
+        w3_link.click()
         browser.close()
